@@ -1,0 +1,39 @@
+<html xmlns:tmpl="Z:\usr\local\php5\ext">
+<head>
+    <title>Prices of ACME, Inc.</title>
+    <script src="script.js"></script>
+</head>
+
+
+
+<body>
+<table id="my-table">
+    <tr>
+        <th>Id</th><th>Name</th><th>Address</th><th>Phone</th>
+    </tr>
+    <tmpl:row>
+        <tr>
+            <td>{id}</td><td>{name}</td><td>{address}</td><td>{phone}</td>
+        </tr>
+    </tmpl:row>
+
+    <button id="button" onclick="sendRequest()">Get Users</button>
+    <div id="result"></div>
+
+</table>
+
+<form  action="http://127.0.0.1:8000/api/users/store" method="post" id="my-form">
+    <label> Name:
+        <input type="text" name="name">
+    </label>
+    <label> Address:
+        <input type="text" name="address">
+    </label>
+    <label> Phone:
+        <input type="text" name="phone">
+    </label>
+    <input type="submit" onclick="sendRequest()">
+</form>
+
+</body>
+</html>
